@@ -1,0 +1,60 @@
+INSERT INTO instructor (instructor_ID,ensemble,instrumentType)
+VALUES
+  ('05B77A64-8E6D-2A9E-F9C8-78589B87167B','false','bass'),
+  ('2B5B065A-BCAC-1B87-E327-E8ACB31E3F80','true','drums'),
+  ('A972297E-641B-B31D-D3A1-85DBD6C3FAE4','true','bass'),
+  ('54D63739-C29E-9DE3-65A4-DE141E4D598C','false','guitar'),
+  ('F7754DF2-A9DD-5CF0-BA40-2649E99A971D','true','flute'),
+  ('C7A71B42-D8E9-F895-A26B-175EC592AC5F','false','guitar'),
+  ('8A8672A7-E31F-B9D2-675D-FD5A46A2A9DA','true','flute'),
+  ('CE3C6E13-C96C-E515-698A-74B79526DDDD','false','piano'),
+  ('900C30D9-A04C-C209-8BA4-CD554E63736E','false','drums'),
+  ('2A24885A-D9BC-DA8E-F1A6-6F31621279B5','false','flute');
+INSERT INTO instructor (instructor_ID,ensemble,instrumentType)
+VALUES
+  ('6BCD23D5-338D-2D38-8BE1-7829CDE1471F','false','flute'),
+  ('2B43383A-4647-8C34-DC27-BB2B3DAA519A','false','drums'),
+  ('AA7D8BE6-C549-7FD5-AA26-2A621118BBFD','true','flute'),
+  ('32E2470F-C11C-43DA-38EB-88D82E828175','false','flute'),
+  ('F5AD3530-7261-CDAA-F583-2D8469A2711C','false','guitar'),
+  ('C10658CB-4083-8299-9E52-33E65431A3F4','true','drums'),
+  ('6EBC8849-B0E6-1DCC-B29E-475DA3D3C7EC','true','guitar'),
+  ('78751AA3-2541-EC4D-34B6-6B5539E11EC7','true','piano'),
+  ('3842949E-C59B-217D-B51E-A787AAFFEE2D','false','guitar'),
+  ('8AE8BB4A-4BCE-AEB8-9B38-96EC507C4746','true','drums');
+INSERT INTO instructor (instructor_ID,ensemble,instrumentType)
+VALUES
+  ('9AFD795D-5B5A-8BDB-518B-A6CCFB2CD687','false','guitar'),
+  ('514375A5-85C5-4342-3F9F-D8AB9DBA1C95','false','bass'),
+  ('C763A424-C97A-1D4A-51B9-D5619B540CA2','false','guitar'),
+  ('ACD4DBD6-BD6A-4346-8513-44C1534A73CB','false','guitar'),
+  ('5175F2C2-C189-ABE2-6DAD-A5BAEEC8652D','false','piano'),
+  ('A42921E8-12E3-342C-93EF-156D4353D9E9','false','piano'),
+  ('B2C13993-787B-2E35-4A52-6DDDBC6997BB','false','bass'),
+  ('7154BEA3-614D-7128-A2EB-F3C32E9223D2','true','guitar'),
+  ('80E34A5D-7C5B-79B4-7B6A-E147778D7DCA','true','drums'),
+  ('60856CC1-79CB-94AF-2F1B-1A91918DE0DB','true','flute');
+INSERT INTO instructor (instructor_ID,ensemble,instrumentType)
+VALUES
+  ('413A9777-0646-9E4B-27DC-3D0259147645','true','piano'),
+  ('6DED1BA8-485E-7B45-0475-098A667675CA','true','bass'),
+  ('58D6011D-FB13-0BAB-7834-29133AD26730','false','drums'),
+  ('B69BDD24-68DC-9565-3896-DBC0EABB9B60','true','piano'),
+  ('7DBBCF5C-78D6-457B-5D6B-FE83AB646D27','true','drums'),
+  ('2653437F-C5BA-1BE6-E87D-DE482ED62C58','false','guitar'),
+  ('BA5C1C5D-B65C-15D7-9E57-179441474450','true','guitar'),
+  ('0FA23219-5892-9A19-9518-A971531612F8','false','flute'),
+  ('DD32EFF7-FA70-0AB8-A825-8AEE5C5D4AE0','false','flute'),
+  ('FCD5BCBB-11B9-557E-5C9D-1D83D05585E9','true','flute');
+INSERT INTO instructor (instructor_ID,ensemble,instrumentType)
+VALUES
+  ('B678516C-0BB0-C68C-CD16-87C8EEA3CAA2','false','bass'),
+  ('9DD58A3D-E2AB-9A1D-6E01-8C0C56E35927','true','bass'),
+  ('59C31E3E-02BD-88EA-31D2-2BE4C5606D8D','false','drums'),
+  ('3F298041-11B9-BE93-D482-1CB53094B53D','true','guitar'),
+  ('3BA3B674-3A78-8E63-756E-3F93067E287A','true','flute'),
+  ('9FEAA56E-BB10-634C-90ED-78D6777F4F77','false','piano'),
+  ('1389EEA1-AB6B-9166-F94E-1287CD6E856E','false','drums'),
+  ('ABF198BD-AC8C-EE28-2354-C0C56ACBE219','false','guitar'),
+  ('BC6AE22B-5CA1-2C94-8145-EAC09DC64125','false','bass'),
+  ('9EC89719-0E49-6105-5A5B-04BACB475CAE','true','guitar');
