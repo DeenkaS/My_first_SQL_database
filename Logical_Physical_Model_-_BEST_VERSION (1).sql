@@ -23,11 +23,18 @@ ALTER TABLE rentedInstruments ADD CONSTRAINT PK_rentedInstruments PRIMARY KEY (i
 CREATE TABLE student (
  student_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
  sibling BOOLEAN,
- person_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
- instrumentType VARCHAR(50)
+ person_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL
 );
 
 ALTER TABLE student ADD CONSTRAINT PK_student PRIMARY KEY (student_ID);
+
+
+CREATE TABLE studentInstrument (
+ student_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+ instrumentType CHAR(10)
+);
+
+ALTER TABLE studentInstrument ADD CONSTRAINT PK_studentInstrument PRIMARY KEY (student_ID);
 
 
 CREATE TABLE addressInformation (
@@ -60,11 +67,18 @@ ALTER TABLE currentlyRentedInstruments ADD CONSTRAINT PK_currentlyRentedInstrume
 CREATE TABLE instructor (
  instructor_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
  ensemble BOOLEAN NOT NULL,
- person_ID INT GENERATED ALWAYS AS IDENTITY,
- instrumentType CHAR(10)
+ person_ID INT GENERATED ALWAYS AS IDENTITY
 );
 
 ALTER TABLE instructor ADD CONSTRAINT PK_instructor PRIMARY KEY (instructor_ID);
+
+
+CREATE TABLE instructorInstrument (
+ instructor_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+ instrumentType CHAR(10)
+);
+
+ALTER TABLE instructorInstrument ADD CONSTRAINT PK_instructorInstrument PRIMARY KEY (instructor_ID);
 
 
 CREATE TABLE lesson (
@@ -117,6 +131,9 @@ ALTER TABLE availabilitySlots ADD CONSTRAINT PK_availabilitySlots PRIMARY KEY (i
 ALTER TABLE student ADD CONSTRAINT FK_student_0 FOREIGN KEY (person_ID) REFERENCES person (person_ID);
 
 
+ALTER TABLE studentInstrument ADD CONSTRAINT FK_studentInstrument_0 FOREIGN KEY (student_ID) REFERENCES student (student_ID);
+
+
 ALTER TABLE addressInformation ADD CONSTRAINT FK_addressInformation_0 FOREIGN KEY (person_ID) REFERENCES person (person_ID);
 
 
@@ -129,6 +146,9 @@ ALTER TABLE currentlyRentedInstruments ADD CONSTRAINT FK_currentlyRentedInstrume
 
 
 ALTER TABLE instructor ADD CONSTRAINT FK_instructor_0 FOREIGN KEY (person_ID) REFERENCES person (person_ID);
+
+
+ALTER TABLE instructorInstrument ADD CONSTRAINT FK_instructorInstrument_0 FOREIGN KEY (instructor_ID) REFERENCES instructor (instructor_ID);
 
 
 ALTER TABLE lesson ADD CONSTRAINT FK_lesson_0 FOREIGN KEY (instructor_ID) REFERENCES instructor (instructor_ID);
