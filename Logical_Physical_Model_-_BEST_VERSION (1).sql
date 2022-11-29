@@ -1,12 +1,5 @@
-CREATE TABLE enum (
- instrument VARCHAR(10),
- skillLevel CHAR(10)
-);
-
-
-CREATE TABLE instrumentTypes (
-);
-
+CREATE TYPE instrument AS ENUM ('piano', 'guitar', 'violin','flute'); 
+CREATE TYPE sLevel AS ENUM ('beginner', 'intermediate', 'advanced');
 
 CREATE TABLE person (
  person_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
@@ -24,7 +17,7 @@ CREATE TABLE rentedInstruments (
  instrument_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
  priceCurrent FLOAT(10) NOT NULL,
  brand VARCHAR(100) NOT NULL,
- rentedInstrumentType VARCHAR(100) NOT NULL
+ rentedInstrumentType instrument NOT NULL
 );
 
 ALTER TABLE rentedInstruments ADD CONSTRAINT PK_rentedInstruments PRIMARY KEY (instrument_ID);
@@ -41,7 +34,7 @@ ALTER TABLE student ADD CONSTRAINT PK_student PRIMARY KEY (student_ID);
 
 CREATE TABLE studentInstrument (
  student_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
- instrumentType VARCHAR(50) NOT NULL
+ instrumentType instrument NOT NULL
 );
 
 ALTER TABLE studentInstrument ADD CONSTRAINT PK_studentInstrument PRIMARY KEY (student_ID);
@@ -85,7 +78,7 @@ ALTER TABLE instructor ADD CONSTRAINT PK_instructor PRIMARY KEY (instructor_ID);
 
 CREATE TABLE instructorInstrument (
  instructor_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
- instrumentType VARCHAR(50) NOT NULL
+ instrumentType instrument NOT NULL
 );
 
 ALTER TABLE instructorInstrument ADD CONSTRAINT PK_instructorInstrument PRIMARY KEY (instructor_ID);
@@ -93,7 +86,7 @@ ALTER TABLE instructorInstrument ADD CONSTRAINT PK_instructorInstrument PRIMARY 
 
 CREATE TABLE lesson (
  lesson_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
- skillLevel VARCHAR(12) NOT NULL,
+ skillLevel sLevel NOT NULL,
  timeSlot TIMESTAMP(10) NOT NULL,
  instrument VARCHAR(50),
  maxStudents INT NOT NULL,
