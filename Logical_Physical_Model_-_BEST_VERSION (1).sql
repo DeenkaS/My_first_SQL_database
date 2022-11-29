@@ -1,5 +1,11 @@
-CREATE TYPE skillLevels AS ENUM ('beginner', 'intermediate','advanced');
-CREATE TYPE instrumentTypes AS ENUM ('piano', 'guitar','flute','drums','bass','violin');
+CREATE TABLE enum (
+ instrument VARCHAR(10),
+ skillLevel CHAR(10)
+);
+
+
+CREATE TABLE instrumentTypes (
+);
 
 
 CREATE TABLE person (
@@ -35,7 +41,7 @@ ALTER TABLE student ADD CONSTRAINT PK_student PRIMARY KEY (student_ID);
 
 CREATE TABLE studentInstrument (
  student_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
- instrumentType instrumentTypes NOT NULL
+ instrumentType VARCHAR(50) NOT NULL
 );
 
 ALTER TABLE studentInstrument ADD CONSTRAINT PK_studentInstrument PRIMARY KEY (student_ID);
@@ -87,9 +93,9 @@ ALTER TABLE instructorInstrument ADD CONSTRAINT PK_instructorInstrument PRIMARY 
 
 CREATE TABLE lesson (
  lesson_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
- skillLevel skillLevels NOT NULL,
+ skillLevel VARCHAR(12) NOT NULL,
  timeSlot TIMESTAMP(10) NOT NULL,
- instrumentType instrumentTypes,
+ instrument VARCHAR(50),
  maxStudents INT NOT NULL,
  minStudents INT NOT NULL,
  lessonType VARCHAR(50) NOT NULL,
@@ -110,10 +116,11 @@ ALTER TABLE price ADD CONSTRAINT PK_price PRIMARY KEY (price_ID,lesson_ID);
 
 
 CREATE TABLE sibling (
- student_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL
+ student_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+ person_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL
 );
 
-ALTER TABLE sibling ADD CONSTRAINT PK_sibling PRIMARY KEY (student_ID);
+ALTER TABLE sibling ADD CONSTRAINT PK_sibling PRIMARY KEY (student_ID,person_ID);
 
 
 CREATE TABLE attending_students (
@@ -162,6 +169,7 @@ ALTER TABLE price ADD CONSTRAINT FK_price_0 FOREIGN KEY (lesson_ID) REFERENCES l
 
 
 ALTER TABLE sibling ADD CONSTRAINT FK_sibling_0 FOREIGN KEY (student_ID) REFERENCES student (student_ID);
+ALTER TABLE sibling ADD CONSTRAINT FK_sibling_1 FOREIGN KEY (person_ID) REFERENCES person (person_ID);
 
 
 ALTER TABLE attending_students ADD CONSTRAINT FK_attending_students_0 FOREIGN KEY (student_ID) REFERENCES student (student_ID);
