@@ -1,5 +1,5 @@
-CREATE TYPE instrument AS ENUM ('piano', 'guitar', 'violin','flute'); 
-CREATE TYPE sLevel AS ENUM ('beginner', 'intermediate', 'advanced');
+--CREATE TYPE instrument AS ENUM ('piano', 'guitar', 'violin','flute'); 
+--CREATE TYPE sLevel AS ENUM ('beginner', 'intermediate', 'advanced');
 
 CREATE TABLE person (
  person_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,

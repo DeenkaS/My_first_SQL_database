@@ -1,117 +1,117 @@
 INSERT INTO person (firstName,lastName,phone,email,personalNumber)
 VALUES
-('Jonas','Dåderman','0721234567','jonasdad@mail.se','200001011234'),
-('Deniel','Saskin','0729185149','Saskin@kth.se','199208138011'),
-('Ingemar','Gerling','0700010001','gerling@mail.se','201002291432'),
-('Stephan','Persson','0733334444','Stephan@gmail.com','201003141230'),
-('Olle','Berlin','0731230095','Berliner@mail.se','197003205868'),
-('Rove','Wierup','0735556666','28cm@hotmail.com','200002021234'),
-('Tessla','Wownörd','0700940944','azeroth@mail.se','199908230001'),
-('Isabelle','Forsberg','0734056767','forsberg@hockey.se','199906051245'),
-('Peter','Otrevlig','0737776666','dryg@hockey.se','190006051245'),
-('Oscar','Nyman','0733458876','nyman@hockey.se','199912121245'),
-('Jennifer','Svensk','0739876676','js@hockey.se','201206051245'),
-('Mamma', 'Svensk', '0701917151', 'mammaS@mail.se', '197201121268'),
-('Bobby', 'Kotick', '0762095551', 'Kotick@mail.se', '200506171238');
+('Jonas','Dåderman','0721234567','jonasdad@mail.se','200001011234'), --ins
+('Deniel','Saskin','0729185149','Saskin@kth.se','199208138011'), --ins
+('Ingemar','Otrevlig','0700010001','gerling@mail.se','201002291432'), --stu
+('Stephan','Otrevlig','0733334444','Stephan@gmail.com','201003141230'), --stu
+('Olle','Berlin','0731230095','Berliner@mail.se','197003205868'), --ins
+('Rove','Wierup','0735556666','28cm@hotmail.com','200002021234'), --stu
+('Tessla','Svensk','0700940944','azeroth@mail.se','199908230001'), --stu
+('Isabelle','Forsberg','0734056767','forsberg@hockey.se','199906051245'), --ins
+('Peter','Otrevlig','0737776666','dryg@hockey.se','190006051245'), --CP
+('Oscar','Nyman','0733458876','nyman@hockey.se','199912121245'), --stu
+('Jennifer','Svensk','0739876676','js@hockey.se','201206051245'), --stu
+('Mamma', 'Svensk', '0701917151', 'mammaS@mail.se', '197201121268'), --CP
+('Bobby', 'Otrevlig', '0762095551', 'Kotick@mail.se', '200506171238'); --stu
 
 --insert into student(person_id) VALUES ((SELECT person_id from person));
 
 INSERT INTO instructor (instructor_ID,ensemble,person_ID)
 VALUES
-(0100,'false','1'),
-(0101,'true','2'),
-(0102,'true','8'),
-(0103,'false','5');
+('false',1),
+('true',2),
+('true',8),
+('false',5);
 
 INSERT INTO addressInformation (person_ID,city,zip,street)
 VALUES
-(1, 'Stockholm', '12079', 'Maltgatan 4'),
-(2, 'Stockholm', '17751', 'Jakobsbergsgatan 12'),
-(3, 'Stockholm', '15512', 'Kthgatan 19'),
-(4, 'Stockholm', '12363', 'Dominovägen 4'),
-(5, 'Stockholm', '12077', 'Henrikdalsgatan 8'),
-(6, 'Stockholm', '11111', 'Rikemansgatan 9'),
-(7, 'Stockholm', '13337', 'Stormvindsgatan 60'),
-(8, 'Linköping', '12455', 'Borgvägen 5'),
-(9, 'Borås', '42069', 'Otrevlighetsgatan 75'),
-(10, 'Stockholm', '16789', 'Läkargatan 1'),
-(11, 'Uppsala', '12433', 'Sverigegatan 42');
+('Stockholm', '12079', 'Maltgatan 4'),
+('Stockholm', '17751', 'Jakobsbergsgatan 12'),
+('Stockholm', '15512', 'Kthgatan 19'),
+('Stockholm', '15512', 'Kthgatan 19'),
+('Stockholm', '12077', 'Henrikdalsgatan 8'),
+('Stockholm', '11111', 'Rikemansgatan 9'),
+('Stockholm', '13337', 'Stormvindsgatan 60'),
+('Linköping', '12455', 'Borgvägen 5'),
+('Borås', '42069', 'Otrevlighetsgatan 75'),
+('Stockholm', '16789', 'Läkargatan 1'),
+('Uppsala', '12433', 'Sverigegatan 42');
 
-INSERT INTO lesson (lesson_ID,skillLevel,timeSlot,instrument,maxStudents,minStudents,lessonType,instructor_ID)
+INSERT INTO lesson (skillLevel,timeSlot,instrument,maxStudents,minStudents,lessonType,instructor_ID)
 VALUES
-(1101, 'beginner', '1669710600', 'guitar', 1, 1, 'single', 'I1'),
-(1102, 'intermediate', '1669710600', null, 5, 2, 'rock', 'I2'),
-(1103, 'intermediate', '1666261800', 'piano', 1,1 'single', 'I4'),
-(1104, 'beginner', '1666002600','flute', 10,2 'group', 'I4'),
-(1104, 'advanced', '1665831600', 'guitar', 3,1,'group', 'I1'),
-(1105, 'intermediate', '1667566800', 'violin', 1,1, 'single','I2'),
-(1106, 'beginner', '1667725200', null, 4,2, 'jazz', 'I3'),
-(1107, 'advanced', '1667300400', null, 6,3, 'jazz', 'I3'),
-(1108, 'beginner', '1667923200', 'violin', 1,1, 'single', 'I2'),
-(1109, 'intemerdiate', '1668096000', 'guitar', 1,1,'single', 'I1');
+('beginner', '1669710600', 'guitar', 1, 1, 'single', 'I1'),
+('intermediate', '1669710600', null, 5, 2, 'rock', 'I2'),
+('intermediate', '1666261800', 'piano', 1,1 'single', 'I4'),
+( 'beginner', '1666002600','flute', 10,2 'group', 'I4'),
+( 'advanced', '1665831600', 'guitar', 3,1,'group', 'I1'),
+( 'intermediate', '1667566800', 'violin', 1,1, 'single','I2'),
+( 'beginner', '1667725200', null, 4,2, 'jazz', 'I3'),
+( 'advanced', '1667300400', null, 6,3, 'jazz', 'I3'),
+( 'beginner', '1667923200', 'violin', 1,1, 'single', 'I2'),
+( 'intemerdiate', '1668096000', 'guitar', 1,1,'single', 'I1');
 
-INSERT INTO student (student_ID,sibling,person_ID)
+INSERT INTO student (sibling,person_ID)
 VALUES
-(2100,'True','3'),
-(2101,'True','4'),
-(2102,'False', '6'),
-(2103,'False', '7'),
-(2104,'True', '10'),
-(2105,'True', '11'),
-(2106,'True', '13');
+('True',3),
+('True',4),
+('False', 6),
+('False', 7),
+('True', 10),
+('True', 11),
+('True', 13);
 
 INSERT INTO contactPerson(student_ID, person_ID)
-(2100, '9'),
-(2101, '9'),
-(2102, '6'),
-(2103, '7'),
-(2104, '10'),
-(2105, '12'),
-(2106, '9');
+( 9),
+( 9),
+( 6),
+( 7),
+( 10),
+( 12),
+( 9);
 
 INSERT INTO sibling(student_ID, student_ID_2)
-(2100, 2101),
+(3, 4),
 (2100, 2106),
 (2101, 2106),
 (2105, 2104);
 
 
 INSERT INTO rentedInstruments(instrument_ID, priceCurrent,brand,rentedInstrumentType)
-('RI1', 250, 'Mercedes', 'guitar'),
-('RI2', 250, 'Mercedes', 'guitar'),
-('RI3', 350, 'Lambo', 'piano'),
-('RI4', 500, 'Nissan', 'flute'),
-('RI5', 250, 'Yamaha', 'violin');
+( 250, 'Mercedes', 'guitar'),
+( 250, 'Mercedes', 'guitar'),
+( 350, 'Lambo', 'piano'),
+( 500, 'Nissan', 'flute'),
+( 250, 'Yamaha', 'violin');
 
 
 INSERT INTO studentInstrument(student_ID, instrumentType)
-('S1', 'guitar'),
-('S2', 'guitar'),
-('S3', 'piano'),
-('S4', 'violin'),
-('S5', 'flute'),
-('S6', 'flute'),
-('S7', 'piano');
+(3, 'guitar'),
+(4, 'guitar'),
+(, 'piano'),
+(, 'violin'),
+(, 'flute'),
+(, 'flute'),
+(, 'piano');
 
 
 INSERT INTO currentlyRentedInstruments(instrument_ID, student_ID, price)
-('RI1', 'S2', 230),
-('RI2', 'S1', 230),
-('RI4', 'S6', 500);
+(,,230),
+(,,230),
+(,,500);
 
 
 INSERT INTO instructorInstrument(instructor_ID. instrumentType)
-('I1', 'guitar'),
-('I2', 'guitar'),
-('I2', 'piano'),
-('I2', 'flute'),
-('I2', 'violin'),
-('I3', 'guitar'),
-('I3', 'piano'),
-('I3', 'flute'),
-('I3', 'violin'),
-('I4', 'flute'),
-('I4', 'piano');
+(,'guitar'),
+(, 'guitar'),
+(, 'piano'),
+(, 'flute'),
+(, 'violin'),
+(, 'guitar'),
+(, 'piano'),
+(, 'flute'),
+(, 'violin'),
+(, 'flute'),
+(, 'piano');
 
 
 INSERT INTO price(price_ID, lesson_ID, siblingDiscountFactor, price)
@@ -165,3 +165,6 @@ INSERT INTO availabilitySlots(instructor_ID, availableSlots)
 ('I4', 1671721200),
 ('I4', 1671890400),
 ('I4', 1671858000);
+
+--CREATE TYPE instrument AS ENUM ('piano', 'guitar', 'violin','flute'); 
+--CREATE TYPE sLevel AS ENUM ('beginner', 'intermediate', 'advanced');
