@@ -87,13 +87,14 @@ ALTER TABLE instructorInstrument ADD CONSTRAINT PK_instructorInstrument PRIMARY 
 CREATE TABLE lesson (
  lesson_ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
  skillLevel sLevel NOT NULL,
- startTime TIMESTAMP(6) NOT NULL,
+ startTime TIME(8) NOT NULL,
  instrument instrument,
  maxStudents INT NOT NULL,
  minStudents INT NOT NULL,
  lessonType VARCHAR(50) NOT NULL,
  instructor_ID INT,
- endTime TIMESTAMP(6)
+ endTime TIME(8)
+ lessonDate DATE(4)
 );
 
 ALTER TABLE lesson ADD CONSTRAINT PK_lesson PRIMARY KEY (lesson_ID);
@@ -127,10 +128,12 @@ ALTER TABLE attending_students ADD CONSTRAINT PK_attending_students PRIMARY KEY 
 
 CREATE TABLE availabilitySlots (
  instructor_ID INT NOT NULL,
- availableSlots TIMESTAMP(6) NOT NULL
+ aStartTime time(4),
+ aEndTime time(4),
+ aDate date
 );
 
-ALTER TABLE availabilitySlots ADD CONSTRAINT PK_availabilitySlots PRIMARY KEY (instructor_ID);
+ALTER TABLE availabilitySlots ADD CONSTRAINT PK_availabilitySlots FOREIGN KEY (instructor_ID) REFERENCES instructor(instructor_ID);
 
 
 ALTER TABLE student ADD CONSTRAINT FK_student_0 FOREIGN KEY (person_ID) REFERENCES person (person_ID);

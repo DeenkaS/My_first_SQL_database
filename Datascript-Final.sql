@@ -39,18 +39,18 @@ VALUES
 (12,'Uppsala', '12433', 'Sverigegatan 42'),
 (13, 'Stockholm', '15512', 'Kthgatan 19');
 
-INSERT INTO lesson (skillLevel,startTime,instrument,maxStudents,minStudents,lessonType,instructor_ID, endTime)
+INSERT INTO lesson (skillLevel,instrument,maxStudents,minStudents,lessonType,instructor_ID, lessonDate, starttime, endTime)
 VALUES
-('beginner', '16697', 'guitar', 1, 1, 'single', 1,'16697'),
-('intermediate', '16697', null, 5, 2, 'rock', 2,'16697'),
-('intermediate', '16662', 'piano', 1,1, 'single', 4,'16662'),
-( 'beginner', '16660','flute', 10,2, 'group', 4,'16660'),
-( 'advanced', '16658', 'guitar', 3,1,'group', 1,'16658'),
-( 'intermediate', '16675', 'violin', 1,1, 'single',2,'16675'),
-( 'beginner', '16677', null, 4,2, 'jazz', 3,'16677'),
-( 'advanced', '16673', null, 6,3, 'jazz', 3,'16673'),
-( 'beginner', '16679', 'violin', 1,1, 'single', 2,'16679'),
-( 'intemerdiate', '16680', 'guitar', 1,1,'single', 1,'16680');
+('beginner',  'guitar', 1, 1, 'single', 1,'2022-10-13','12:30', '14:30'),
+('intermediate',  null, 5, 2, 'rock', 2,'2022-10-16','08:00', '10:00'),
+('intermediate', 'piano', 1,1, 'single', 4,'2022-10-22', '14:00', '16:00'),
+( 'beginner', 'flute', 10,2, 'group', 4, '2022-11-04', '13:00', '15:00'),
+( 'advanced',  'guitar', 3,1,'group', 1,'2022-11-04', '15:00', '17:00'),
+( 'intermediate',  'violin', 1,1, 'single',2,'2022-11-06', '14:15', '16:45'),
+( 'beginner', null, 4,2, 'jazz', 3,'2022-11-13', '13:37', '15:37'),
+( 'advanced',  null, 6,3, 'jazz', 3,'2022-11-24', '09:00', '11:00'),
+( 'beginner', 'violin', 1,1, 'single', 2,'2022-12-24', '15:00', '17:00'),
+( 'intermediate',  'guitar', 1,1,'single', 1,'2022-12-31', '10:00', '12:00');
 
 INSERT INTO student (sibling,person_ID)
 VALUES
@@ -107,75 +107,68 @@ VALUES
 (4,5,500);
 
 
-INSERT INTO instructorInstrument(instructor_ID. instrumentType)
+INSERT INTO instructorInstrument(instructor_ID, instrumentType)
 VALUES
-(,'guitar'),
-(, 'guitar'),
-(, 'piano'),
-(, 'flute'),
-(, 'violin'),
-(, 'guitar'),
-(, 'piano'),
-(, 'flute'),
-(, 'violin'),
-(, 'flute'),
-(, 'piano');
+(1,'guitar'),
+(2, 'piano'),
+(3, 'flute'),
+(4, 'violin');
 
 
-INSERT INTO price(price_ID, lesson_ID, siblingDiscountFactor, price)
+INSERT INTO price(lesson_ID, siblingDiscountFactor, price)
 VALUES
-('Pr1', 'L1',,300),
-('Pr2', 'L2',,500),
-('Pr3', 'L3',,500),
-('Pr4', 'L4',,300),
-('Pr5', 'L5',,600),
-('Pr6', 'L6',,500),
-('Pr7', 'L7',,300),
-('Pr8', 'L8',,600),
-('Pr9', 'L9',,300),
-('Pr10', 'L10',,500);
+(1,0.8,300),
+(2,0.8,500),
+(3,0.8,500),
+(4,0.8,300),
+(5,0.8,600),
+(6,0.8,500),
+(7,0.8,300),
+(8,0.8,600),
+(9,0.8,300),
+(10,0.8,500);
 
 INSERT INTO attending_students(student_ID, lesson_ID)
 VALUES
-('S1','L1'),
-('S2','L2'),
-('S3', 'L2'),
-('S1', 'L2'),
-('S7','L3'),
-('S5','L4'),
-('S6', 'L4'),
-('S1','L5'),
-('S2', 'L5'),
-('S4','L6'),
-('S6','L7'),
-('S4', 'L7'),
-('S7', 'L7'),
-('S6','L8'),
-('S4', 'L8'),
-('S7', 'L8'),
-('S4','L9'),
-('S2','L10');
+(1,1),
+(2,2),
+(3,2),
+(1,2),
+(7,3),
+(5,4),
+(6,4),
+(1,5),
+(2,5),
+(4,6),
+(6,7),
+(4,7),
+(7,7),
+(6,8),
+(4,8),
+(7,8),
+(4,9),
+(2,10);
 
 
 
-INSERT INTO availabilitySlots(instructor_ID, availableSlots)
+INSERT INTO availabilitySlots(instructor_ID, aStartTime,aEndTime, aDate)
 VALUES
-('I1', 1671706800),
-('I1', 1671714000),
-('I1', 1671721200),
-('I1', 1671771600),
-('I2', 1671706800),
-('I2', 1671782400),
-('I2', 1671807600),
-('I2', 1671796800),
-('I3', 1671721200),
-('I3', 1672124400),
-('I3', 1671796800),
-('I3', 1671807600),
-('I4', 1671807600),
-('I4', 1671721200),
-('I4', 1671890400),
-('I4', 1671858000);
+(1, '12:00', '14:00', '2023-01-01'),
+(1, '14:00', '16:00', '2023-01-01'),
+(1, '08:00', '12:00', '2023-01-03'),
+(1, '16:00', '18:00', '2023-01-05'),
+(2, '12:00', '14:00', '2023-01-01'),
+(2, '14:00', '16:00', '2023-01-02'),
+(2, '08:00', '12:00', '2023-01-04'),
+(2, '16:00', '18:00', '2023-01-06'),
+(3, '12:00', '14:00', '2023-01-07'),
+(3, '14:00', '16:00', '2023-01-08'),
+(3, '08:00', '12:00', '2023-01-09'),
+(3, '16:00', '18:00', '2023-01-10'),
+(4, '12:00', '14:00', '2023-02-01'),
+(4, '14:00', '16:00', '2023-02-01'),
+(4, '08:00', '12:00', '2023-02-03'),
+(4, '16:00', '18:00', '2023-02-05');
 
 --CREATE TYPE instrument AS ENUM ('piano', 'guitar', 'violin','flute'); 
 --CREATE TYPE sLevel AS ENUM ('beginner', 'intermediate', 'advanced');
