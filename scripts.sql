@@ -9,11 +9,12 @@ count(lessontype) as total
 from lesson group by month;
 
 --Show number of siblings of each student.
-select distinct student.student_id, count(sibling.student_id), count(sibling.student_id_2) 
-from student full join sibling on student.student_id = sibling.student_id 
-group by student.student_id order by student.student_id
+SELECT student.student_id, count(siblings) as siblings
+FROM 
+(SELECT student_id FROM sibling UNION ALL SELECT student_id_2 FROM sibling) 
+as siblings FULL JOIN student ON siblings.student_id=student.student_id group by student.student_id order by student.student_id;
 
-select sibling.student_id as siblings from sibling union all select sibling.student_id_2 from sibling;
+
 --returns number of instructors given more than X lessons during the current month.
 
 
