@@ -94,7 +94,7 @@ CREATE TABLE lesson (
  lessonType VARCHAR(50) NOT NULL,
  instructor_ID INT,
  endTime TIME(8)
- lessonDate DATE(4)
+ lessonDate DATE
 );
 
 ALTER TABLE lesson ADD CONSTRAINT PK_lesson PRIMARY KEY (lesson_ID);
