@@ -41,16 +41,26 @@ VALUES
 
 INSERT INTO lesson (skillLevel,instrument,maxStudents,minStudents,lessonType,instructor_ID, lessonDate, starttime, endTime)
 VALUES
-('beginner',  'guitar', 1, 1, 'single', 1,'2022-10-13','12:30', '14:30'),
-('intermediate',  null, 5, 2, 'rock', 2,'2022-10-16','08:00', '10:00'),
-('intermediate', 'piano', 1,1, 'single', 4,'2022-10-22', '14:00', '16:00'),
+( 'advanced', 'piano', 1,1,'single',2,'2021-06-13','13:00','15:00'),
+( 'advanced', 'guitar', 1,1,'single',1,'2021-06-15','10:00','12:00'),
+( 'advanced', null, 5,3,'rock',2,'2021-07-15','10:00','12:00'),
+( 'advanced', 'guitar', 4,1,'group',1,'2021-08-15','10:00','12:00'),
+( 'beginner',  'guitar', 1, 1, 'single', 1,'2022-10-13','12:30', '14:30'),
+( 'intermediate',  null, 5, 2, 'rock', 2,'2022-10-16','08:00', '10:00'),
+( 'intermediate', 'piano', 1,1, 'single', 4,'2022-10-22', '14:00', '16:00'),
 ( 'beginner', 'flute', 10,2, 'group', 4, '2022-11-04', '13:00', '15:00'),
 ( 'advanced',  'guitar', 3,1,'group', 1,'2022-11-04', '15:00', '17:00'),
 ( 'intermediate',  'violin', 1,1, 'single',2,'2022-11-06', '14:15', '16:45'),
 ( 'beginner', null, 4,2, 'jazz', 3,'2022-11-13', '13:37', '15:37'),
 ( 'advanced',  null, 6,3, 'jazz', 3,'2022-11-24', '09:00', '11:00'),
 ( 'beginner', 'violin', 1,1, 'single', 2,'2022-12-24', '15:00', '17:00'),
-( 'intermediate',  'guitar', 1,1,'single', 1,'2022-12-31', '10:00', '12:00');
+( 'intermediate',  'guitar', 1,1,'single', 1,'2022-12-31', '10:00', '12:00'),
+( 'beginner', null, 7, 3, 'pop', 2, '2022-12-08', '10:00', '14:00'),
+( 'intermediate', null, 4, 2, 'hard rock', 4,'2022-12-09', '14:00', '18:00'),
+( 'beginner', 'flute', 1,1,'single',3,'2023-01-09','08:00','10:00'),
+( 'intermediate', 'violin', 3,1,'group',4,'2023-01-13','13:00','15:00'),
+( 'beginner', 'flute', 1,1,'single',3,'2023-02-09','08:00','10:00'),
+( 'intermediate', 'violin', 3,1,'group',4,'2023-02-13','13:00','15:00');
 
 INSERT INTO student (sibling,person_ID)
 VALUES
