@@ -1,6 +1,17 @@
 --Returns number of each lesson type held per month for a specified year, as well as the total number of lessons during that month.
-select count(lessonDate) from lesson where lessonDate >= '2022-10-01' AND lessonDate <= '2022-10-31';
+--counts # lessontypes
+select count(case when lessontype = 'single' then 1 else null end) as single,
+count(case when lessontype = 'group' then 1 else null end) as group,
+count(case when lessontype != 'group' and lessontype != 'single' then 1 else null end) as ensemble from lesson;
 
+select lessondate, extract(month from lessondate) as month from lesson;
+
+select extract(month from lessondate) as month,
+    case(when lessontype = 'single' then 1 else null end) as single,
+    case when lessontype = 'group' then 1 else null end as group,
+    case when lessontype != 'group' and lessontype != 'single' then 1 else null end as ensemble 
+    from lesson;
+    
 
 --Show number of siblings of each student.
 
