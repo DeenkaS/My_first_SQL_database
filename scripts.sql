@@ -14,11 +14,12 @@ SELECT student.student_id ,count(siblings) as "Number of Siblings"
         FULL JOIN student ON siblings.student_id=student.student_id group by siblings, student.student_id order by sibling desc;
 
 --returns number of instructors given more than X lessons during the current month.
-SELECT instructor_ID, count(instructor_id) AS lessons_given FROM lesson 
-    WHERE EXTRACT(MONTH FROM lessondate) = EXTRACT(MONTH FROM CURRENT_DATE)
-        GROUP BY instructor_ID 
-            HAVING count(instructor_id) >= 1
-                ORDER BY lessons_given DESC;
+CREATE VIEW instructor_lessons_per_month AS
+    SELECT instructor_ID, count(instructor_id) AS lessons_given FROM lesson 
+        WHERE EXTRACT(MONTH FROM lessondate) = EXTRACT(MONTH FROM CURRENT_DATE)
+            GROUP BY instructor_ID 
+                HAVING count(instructor_id) >= 1
+                    ORDER BY lessons_given DESC;
 
 --show ensemble next week and available slots sorted by music and day
 select lesson.maxstudents - count(attending_students) as availableSlots, lessontype as genre, TO_CHAR(lessondate, 'Day') as day
