@@ -6,7 +6,7 @@ SELECT TO_CHAR(lessondate, 'MON') AS MONTH,
     SUM(CASE WHEN lessontype != 'group' AND lessontype != 'single' THEN 1 ELSE 0 END) AS ensembles,
     COUNT(lessontype) AS "total lessons" FROM lesson 
         WHERE extract(year FROM lessondate) = 2023
-            GROUP BY MONTH order BY MONTH DESC;
+            GROUP BY MONTH ORDER BY MONTH DESC;
 
 --Show number of siblings of each student.
 SELECT student.student_id ,COUNT(siblings) AS "Number of Siblings"
