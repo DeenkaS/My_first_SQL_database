@@ -30,10 +30,15 @@ CREATE VIEW instructor_lessons_per_month AS
 
 
 --show ensemble next week and available slots sorted BY music and day
+CREATE VIEW ensemble_query AS
 SELECT lesson.maxstudents - COUNT(attending_students) AS availableSlots, lessontype AS genre, TO_CHAR(lessondate, 'Day') AS day
     FROM lesson full join attending_students on lesson.lesson_id = attending_students.lesson_id
         WHERE lessontype != 'single' AND lessontype != 'group' AND extract(week FROM lessondate) = extract(week FROM current_date) + 1 
             GROUP BY lessondate, maxstudents, lessontype ORDER BY day, lessontype DESC;
+
+SELECT genre, (case when availableSlots = 0 THEN 'Fully booked' 
+when availableSlots between 1 AND 2 THEN '1-2 seats left' 
+when availableSlots > 2 THEN 'Many seats left' END) AS available_slots, day from ensemble_query;
 
 
 
