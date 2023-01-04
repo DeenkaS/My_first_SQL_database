@@ -13,6 +13,12 @@ SELECT student.student_id ,COUNT(siblings) AS "Number of Siblings"
     FROM (SELECT student_id FROM sibling UNION ALL SELECT student_id_2 FROM sibling) AS siblings 
         FULL JOIN student ON siblings.student_id=student.student_id GROUP BY siblings, student.student_id ORDER BY sibling DESC;
 
+
+--Deniels attempt
+SELECT COUNT(siblings) AS "number of siblings"
+FROM (SELECT student_id FROM sibling UNION ALL SELECT student_id_2 FROM sibling) AS siblings;
+
+
 --returns number of instructors given more than X lessons during the current month.
 CREATE VIEW instructor_lessons_per_month AS
     SELECT instructor_ID, COUNT(instructor_id) AS lessons_given FROM lesson 
